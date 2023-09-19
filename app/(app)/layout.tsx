@@ -1,5 +1,8 @@
 import { Metadata } from "next";
-import { Croissant_One } from 'next/font/google'
+import { Croissant_One } from 'next/font/google';
+
+import '../globals.css'
+
 
 const croissant = Croissant_One({ subsets: ["latin"], weight: ["400"] });
 
@@ -14,7 +17,7 @@ export default function layout(
 ) {
     return (
         <html lang="en">
-        <body className={`${croissant.className}`}>
+        <body className={`${croissant.className} bg-dark text-white`}>
             <main>
                 {children}
             </main>

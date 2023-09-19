@@ -1,0 +1,1 @@
+export const loginLink = "/api/auth/signin?callbackUrl=/app";

@@ -1,6 +1,8 @@
-import '../globals.css'
 import type { Metadata } from 'next'
 import { Croissant_One } from 'next/font/google'
+
+import '../globals.css'
+import Nav from './components/Nav';
 
 const croissant = Croissant_One({ subsets: ["latin"], weight: ["400"] });
 
@@ -16,7 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={croissant.className}>{children}</body>
+      <body className={`${croissant.className} bg-dark text-white`}>
+        <Nav />
+        <main>
+        {children}
+        </main>
+      </body>
     </html>
   )
 }
