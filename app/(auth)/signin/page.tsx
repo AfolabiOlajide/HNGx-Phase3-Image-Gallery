@@ -8,7 +8,6 @@ import Input from "../components/Input";
 function SignIn() {
     const searchParams = useSearchParams()
     const errorParam = searchParams.get('error') 
-    console.log(errorParam)
 
     const emailRef = useRef<HTMLInputElement | null>(null);
     const passwordRef = useRef<HTMLInputElement | null>(null);
