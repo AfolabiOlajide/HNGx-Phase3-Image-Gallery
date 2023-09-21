@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import { Metadata } from 'next'
 import { Croissant_One } from 'next/font/google'
 
 import '../globals.css'

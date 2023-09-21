@@ -1,27 +1,23 @@
 import { Metadata } from "next";
-import { Croissant_One } from 'next/font/google';
+import { Croissant_One } from "next/font/google";
 
-import '../globals.css'
-
+import "../globals.css";
+import Nav from "./components/Nav";
 
 const croissant = Croissant_One({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
     title: "Image Galerry App",
-    description: "Application for image gallery (Drag and Drop)"
-}
+    description: "Application for image gallery (Drag and Drop)",
+};
 
-export default function layout(
-    { children }:
-    { children: React.ReactNode }
-) {
+export default function layout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-        <body className={`${croissant.className} bg-dark text-white`}>
-            <main>
-                {children}
-            </main>
-        </body>
+            <body className={`${croissant.className} bg-dark text-white pb-[5rem]`}>
+                <Nav />
+                <main>{children}</main>
+            </body>
         </html>
-    )
+    );
 }

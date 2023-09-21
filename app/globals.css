@@ -5,3 +5,15 @@
 .bg-grad {
     @apply bg-gradient-to-r from-primary to-secondary;
 }
+
+.bg-grad-light{
+    @apply bg-gradient-to-r from-primary/40 to-secondary/40;
+}
+
+.trans{
+    @apply transition-all duration-300 ease-in-out;
+}
+
+.text-gradient{
+    @apply bg-clip-text bg-gradient-to-r from-primary to-secondary text-transparent;
+}

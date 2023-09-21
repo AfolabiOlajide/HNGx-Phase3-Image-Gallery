@@ -13,7 +13,7 @@ const Nav = async() => {
     const session = await getServerSession(options);
 
     return (
-        <nav className="flex justify-between items-center p-[2rem]">
+        <nav className="flex justify-between items-center p-[2rem] mb-[3rem]">
             <Logo />
             {/* login */}
             <div className="login">
