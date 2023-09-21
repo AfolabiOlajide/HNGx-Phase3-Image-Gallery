@@ -1,4 +1,4 @@
-export const loginLink = "/api/auth/signin?callbackUrl=/app";
+export const loginLink = "/signin";
 
 export const imageData: ImageD[]= [
     {

@@ -7,7 +7,7 @@ const Logo = () => {
         <Link href={`/`}>
             <div className="logo flex items-center">
                 {/* <Image src={LOGO} width={20} height={20} alt="Logo" /> */}
-                <span className="text-bold text-[2rem] text-gradient">Image Gallery App</span>
+                <span className="text-bold text-[1.2rem] md:text-[2rem] text-gradient">Image Gallery App</span>
             </div>
         </Link>
     );
