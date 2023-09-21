@@ -3,6 +3,11 @@ import { useState } from "react";
 import {
     DndContext,
     closestCenter,
+    MouseSensor,
+    TouchSensor,
+    useSensor,
+    useSensors,
+    KeyboardSensor,
 } from "@dnd-kit/core";
 import {
     arrayMove,
@@ -18,6 +23,7 @@ import ImageCard from "../components/ImageCard";
 
 const ApplicationPage = () => {
     const [items, setItems] = useState<ImageD[]>(imageData);
+    // const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor), useSensor(KeyboardSensor));
 
 
     function handleDragEnd(event: any) {
@@ -50,6 +56,7 @@ const ApplicationPage = () => {
             </div>
             <h1 className="mb-[2rem] text-[2rem] text-gradient">Gallery</h1>
             <DndContext
+                // sensors={sensors}
                 collisionDetection={closestCenter}
                 onDragEnd={handleDragEnd}
             >
