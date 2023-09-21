@@ -1,3 +1,4 @@
+
 import {useSortable} from '@dnd-kit/sortable';
 import {CSS} from '@dnd-kit/utilities';
 import Image from "next/image";
@@ -25,10 +26,10 @@ const ImageCard = ({ url, id, tag, index }: ImageCardProps) => {
         transformOrigin: '0 0',
     };
     
-    
+
 
     return (
-        <div ref={setNodeRef} {...attributes} {...listeners} style={style} className="image-card bg-dark rounded-md ring-2 ring-secondary/30 hover:ring-secondary/60 p-[.2rem] trans">
+        <div ref={setNodeRef} {...attributes} {...listeners} style={style} className="touch-none image-card bg-dark rounded-md ring-2 ring-secondary/30 hover:ring-secondary/60 p-[.2rem] trans">
             <div className="img w-full aspect-square overflow-hidden rounded-md">
                 <Image
                     className={`w-full`}
