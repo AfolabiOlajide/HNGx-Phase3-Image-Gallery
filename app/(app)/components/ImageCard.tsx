@@ -10,7 +10,7 @@ type ImageCardProps = {
 };
 
 const ImageCard = ({ url, id, tag, index }: ImageCardProps) => {
-    const sortable = useSortable({id: url});
+    const sortable = useSortable({id: id});
     const {
         attributes,
         listeners,
@@ -26,7 +26,7 @@ const ImageCard = ({ url, id, tag, index }: ImageCardProps) => {
     };
 
     return (
-        <div ref={setNodeRef} {...attributes} {...listeners} style={style} className="image-card bg-dark rounded-md ring-2 ring-secondary/30 hover:ring-secondary/60 p-[.2rem] trans origin-[0_0]">
+        <div ref={setNodeRef} {...attributes} {...listeners} style={style} className="image-card bg-dark rounded-md ring-2 ring-secondary/30 hover:ring-secondary/60 p-[.2rem] trans">
             <div className="img w-full aspect-square overflow-hidden rounded-md">
                 <Image
                     className="w-full"

@@ -13,7 +13,6 @@ import {
     arrayMove,
     SortableContext,
     rectSortingStrategy,
-    verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 
 // local exports
@@ -24,30 +23,19 @@ import ImageCard from "../components/ImageCard";
 
 const ApplicationPage = () => {
     const [items, setItems] = useState<ImageD[]>(imageData);
-    const [activeId, setActiveId] = useState(null);
-    const [searchParam, setSearchParam] = useState<string>("");
-    const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
+    // const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
 
-    function handleDragStart(event: any) {
-        setActiveId(event.active.id);
-    }
 
     function handleDragEnd(event: any) {
         const { active, over } = event;
 
         if (active.id !== over.id) {
             setItems((items) => {
-                const oldIndex = items.findIndex(item => item.url === active.id)
-                const newIndex = items.findIndex(item => item.url === over.id)
+                const oldIndex = items.findIndex(item => item.id === active.id)
+                const newIndex = items.findIndex(item => item.id === over.id)
                 return arrayMove(items, oldIndex , newIndex );
             });
         }
-
-        setActiveId(null);
-    }
-
-    function handleDragCancel() {
-        setActiveId(null);
     }
 
     function handleSearchChange (e: React.ChangeEvent<HTMLInputElement>) {
@@ -68,13 +56,11 @@ const ApplicationPage = () => {
             </div>
             <h1 className="mb-[2rem] text-[2rem] text-gradient">Gallery</h1>
             <DndContext
-                sensors={sensors}
+                // sensors={sensors}
                 collisionDetection={closestCenter}
-                onDragStart={handleDragStart}
                 onDragEnd={handleDragEnd}
-                onDragCancel={handleDragCancel}
             >
-                <SortableContext items={items} strategy={verticalListSortingStrategy}>
+                <SortableContext items={items} strategy={rectSortingStrategy}>
                 <div className="gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[2rem]">
                     {items.map((image, index) => (
                         <ImageCard
@@ -91,20 +77,6 @@ const ApplicationPage = () => {
                 {
                     items.length === 0 && <div>No Image with this tag</div>
                 }
-
-                {/* <DragOverlay adjustScale={true}>
-                    {activeId ? (
-                        items.map((image, index) => (
-                            <ImageCard
-                                key={image.id}
-                                id={image.id}
-                                tag={image.tag}
-                                url={image.url}
-                                index={index}
-                            />
-                        ))
-                    ) : null}
-                </DragOverlay> */}
                 {/* <div className="gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[2rem]">
                     {items.map((image, index) => (
                         <ImageCard
