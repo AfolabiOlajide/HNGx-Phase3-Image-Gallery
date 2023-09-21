@@ -1,6 +1,8 @@
 # Image gallery Application
-
 Image gallery application with drag and drop feature
+![alt text](./assets//home_shot.png)
+App shot
+![alt text](./assets//app_shot.png)
 
 ## Running the code on your local machine
 - download zip folder or clone the application
