@@ -9,6 +9,7 @@ type ImageCardProps = {
     index: number;
 };
 
+
 const ImageCard = ({ url, id, tag, index }: ImageCardProps) => {
     const sortable = useSortable({id: id,});
     const {
